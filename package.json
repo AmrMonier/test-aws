@@ -7,7 +7,7 @@
   "scripts": {
     "generate-super-admin": "node src/scripts/generateSuperAdmin.js",
     
-    "dev": "nodemon server.js",
+    "dev": "nodemon server.js"
     
   },
   "repository": {
