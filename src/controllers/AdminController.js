@@ -1,5 +1,5 @@
 import BaseController from "./BaseController.js";
-import Admin from "../Models/Admin.js";
+import Admin from "./../models/Admin.js";
 import Token from "../models/Token.js";
 import {
   verify,
