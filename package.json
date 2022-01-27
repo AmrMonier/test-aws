@@ -1,23 +1,42 @@
 {
-  "name": "test-aws",
+  "name": "marketeers-backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "The Backend API for Marketeers Project",
+  "main": "Server2.js",
   "type": "module",
   "scripts": {
+    "generate-super-admin": "node src/scripts/generateSuperAdmin.js",
+    "start": "node server2.js",
+    "dev": "nodemon server.js",
+    "build": "babel src -d lib"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AmrMonier/test-aws.git"
+    "url": "git+https://github.com/addictadev/marketeers-backend.git"
   },
-  "author": "",
+  "author": "Amr Monier",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AmrMonier/test-aws/issues"
+    "url": "https://github.com/addictadev/marketeers-backend/issues"
   },
-  "homepage": "https://github.com/AmrMonier/test-aws#readme",
+  "homepage": "https://github.com/addictadev/marketeers-backend#readme",
   "dependencies": {
+    "@sendgrid/mail": "^7.6.0",
+    "babel-cli": "^6.26.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.1",
+    "chalk": "^5.0.0",
     "cors": "^2.8.5",
-    "express": "^4.17.2"
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "express-validator": "^6.14.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.5",
+    "multer": "^1.4.4",
+    "twilio": "^3.73.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "nodemon": "^2.0.15"
   }
 }
