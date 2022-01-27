@@ -1,5 +1,5 @@
-import { check,param } from "express-validator";
-import RewardProvider from "../models/RewardProvider.js";
+import { check, param } from "express-validator";
+import RewardProvider from "./../models/RewardProvider.js";
 const rewardProviderValidator = {
   create: [
     check("name", "Name is required")
@@ -25,7 +25,7 @@ const rewardProviderValidator = {
       .trim()
       .isLength({ min: 3 })
       .withMessage("the name must be at least 3 character"),
-    
+
     check("email", "invalid email")
       .normalizeEmail({ gmail_remove_dots: false })
       .isEmail()

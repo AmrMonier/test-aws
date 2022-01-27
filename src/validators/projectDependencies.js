@@ -1,10 +1,10 @@
 import { check } from "express-validator";
-import LOI from "../models/LengthOfInterview.js";
-import IncidenceRate from "../models/IncidenceRate.js";
-import RateCard from "../models/RateCard.js";
-import Country from "../models/Country.js";
-import SampleSize from "../models/SampleSize.js";
-import SampleSizeRateCard from "../models/SampleSizeRateCard.js";
+import LOI from "./../models/LengthOfInterview.js";
+import IncidenceRate from "./../models/IncidenceRate.js";
+import RateCard from "./../models/RateCard.js";
+import Country from "./../models/Country.js";
+import SampleSize from "./../models/SampleSize.js";
+import SampleSizeRateCard from "./../models/SampleSizeRateCard.js";
 
 const validators = {
   lengthOfInterview: [

@@ -1,6 +1,6 @@
 import BaseController from "./BaseController.js";
-import AMHI from "../models/AMHI.js";
-import { checkId } from "../helpers/methods.js";
+import AMHI from "./../models/AMHI.js";
+import { checkId } from "./../helpers/methods.js";
 
 class AMHIController extends BaseController {
   async create(req, res, next) {

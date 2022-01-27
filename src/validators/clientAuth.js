@@ -1,5 +1,5 @@
 import { check } from "express-validator";
-import Client from "../models/Client.js";
+import Client from "./../models/Client.js";
 const ClientAuth = {
   register: [
     check("name", "name must be at least 3 characters long")

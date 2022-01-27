@@ -1,8 +1,8 @@
 import { Router } from "express";
 
-import { isAdmin } from "../middlewares/authorization.js";
-import validators from "../validators/projectDependencies.js";
-import AMHIController from "../controllers/AMHIController.js";
+import { isAdmin } from "./../middlewares/authorization.js";
+import validators from "./../validators/projectDependencies.js";
+import AMHIController from "./../controllers/AMHIController.js";
 const routes = new Router();
 
 routes.post("/", isAdmin, validators.amhi, AMHIController.create);

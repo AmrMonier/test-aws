@@ -1,9 +1,13 @@
 import { Router } from "express";
 
-import userValidator from "../validators/userAuth.js";
-import userController from "../controllers/UserController.js";
-import { isAdmin, isMobileApp, isUser } from "../middlewares/authorization.js";
-import validator from "../validators/rewardRequest.js";
+import userValidator from "./../validators/userAuth.js";
+import userController from "./../controllers/UserController.js";
+import {
+  isAdmin,
+  isMobileApp,
+  isUser,
+} from "./../middlewares/authorization.js";
+import validator from "./../validators/rewardRequest.js";
 const routes = new Router();
 routes.post(
   "/register",

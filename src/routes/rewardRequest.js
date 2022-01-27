@@ -1,8 +1,8 @@
 import { Router } from "express";
 
-import rewardRequestController from "../controllers/RewardRequestController.js";
-import { isAdmin } from "../middlewares/authorization.js";
-import validator from "../validators/rewardRequest.js";
+import rewardRequestController from "./../controllers/RewardRequestController.js";
+import { isAdmin } from "./../middlewares/authorization.js";
+import validator from "./../validators/rewardRequest.js";
 const routes = new Router();
 
 routes.get("/", isAdmin, validator.all, rewardRequestController.all);

@@ -1,6 +1,6 @@
 import BaseController from "./BaseController.js";
-import SampleSize from "../models/SampleSize.js";
-import { checkId } from "../helpers/methods.js";
+import SampleSize from "./../models/SampleSize.js";
+import { checkId } from "./../helpers/methods.js";
 
 class SampleSizeController extends BaseController {
   async create(req, res, next) {

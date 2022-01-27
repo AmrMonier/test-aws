@@ -1,9 +1,14 @@
 import { Router } from "express";
 
-import { isAdmin, isUser, isMobileApp, isMobileOrAdmin } from "../middlewares/authorization.js";
-import rewardsController from "../controllers/RewardsController.js";
-import rewardValidator from "../validators/reward.js";
-import { uploadPhoto } from "../helpers/fileUploader.js";
+import {
+  isAdmin,
+  isUser,
+  isMobileApp,
+  isMobileOrAdmin,
+} from "./../middlewares/authorization.js";
+import rewardsController from "./../controllers/RewardsController.js";
+import rewardValidator from "./../validators/reward.js";
+import { uploadPhoto } from "./../helpers/fileUploader.js";
 const routes = new Router();
 
 routes.post(

@@ -1,11 +1,10 @@
 import BaseController from "./BaseController.js";
-import RateCard from "../models/SampleSizeRateCard.js";
-import { checkId } from "../helpers/methods.js";
+import RateCard from "./../models/SampleSizeRateCard.js";
+import { checkId } from "./../helpers/methods.js";
 
 class SampleSizeRateCardController extends BaseController {
   async create(req, res, next) {
     super.reportErrors(req, res, next).then(() => {
-      
       const { number, duration, sampleSize, incidenceRate } = req.body;
       RateCard.create({ number, duration, sampleSize, incidenceRate }).then(
         (rateCard) => {

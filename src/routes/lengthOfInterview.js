@@ -2,9 +2,9 @@ import { Router } from "express";
 
 // import all controllers
 // import SessionController from './app/controllers/SessionController';
-import { isAdmin } from "../middlewares/authorization.js";
-import validators from "../validators/projectDependencies.js";
-import lenghtOfInterviewController from "../controllers/LenghtOfInterviewController.js";
+import { isAdmin } from "./../middlewares/authorization.js";
+import validators from "./../validators/projectDependencies.js";
+import lenghtOfInterviewController from "./../controllers/LenghtOfInterviewController.js";
 const routes = new Router();
 
 routes.post(

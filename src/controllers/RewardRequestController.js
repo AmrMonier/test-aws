@@ -1,6 +1,6 @@
 import BaseController from "./BaseController.js";
-import RewardRequest from "../models/RewardRequest.js";
-import { checkId } from "../helpers/methods.js";
+import RewardRequest from "./../models/RewardRequest.js";
+import { checkId } from "./../helpers/methods.js";
 
 class RewardRequestController extends BaseController {
   async all(req, res, next) {
@@ -16,12 +16,14 @@ class RewardRequestController extends BaseController {
     if (!checkId(id)) {
       return res.status(404).json({ msg: "requested resource not found" });
     }
-    RewardRequest.findById(id).populate([{ path: "reward", populate: "provider" }, "user"]).then((request) => {
-      if (!request) {
-        return res.status(404).json({ msg: "requested resource not found" });
-      }
-      return res.json({ request });
-    });
+    RewardRequest.findById(id)
+      .populate([{ path: "reward", populate: "provider" }, "user"])
+      .then((request) => {
+        if (!request) {
+          return res.status(404).json({ msg: "requested resource not found" });
+        }
+        return res.json({ request });
+      });
   }
   async approve(req, res, next) {
     const { id } = req.params;
@@ -50,8 +52,7 @@ class RewardRequestController extends BaseController {
         user.points -= reward.points;
         user.save();
         request.save().then(() => {
-          return res
-            .json({ msg: "request approved successfully.", request });
+          return res.json({ msg: "request approved successfully.", request });
         });
       })
       .catch((err) => next(err));

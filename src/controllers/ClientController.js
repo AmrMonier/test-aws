@@ -1,17 +1,17 @@
 import BaseController from "./BaseController.js";
-import Token from "../models/Token.js";
-import Client from "../models/Client.js";
+import Token from "./../models/Token.js";
+import Client from "./../models/Client.js";
 import {
   genVerificationToken,
   generateJWT,
   verify,
   hash,
-} from "../helpers/cryptography.js";
+} from "./../helpers/cryptography.js";
 import {
   sendVerificationMail,
   sendResetPasswordMail,
   confirmPasswordResetedMail,
-} from "../helpers/sendGrid.js";
+} from "./../helpers/sendGrid.js";
 
 class ClientController extends BaseController {
   async register(req, res, next) {
@@ -156,19 +156,21 @@ class ClientController extends BaseController {
       return res.json({ msg: "password updated successfully" });
     });
   }
-  
+
   async update(req, res, next) {
     super
       .reportErrors(req, res, next)
       .then(() => {
         const id = req.user._id;
         const { name, phoneNumber } = req.body;
-        Client.findByIdAndUpdate(id, { name, phoneNumber }, { new: true }).then((client) => {
-          if (!client) {
-            return res.status(404).json({ msg: "resource not found" });
+        Client.findByIdAndUpdate(id, { name, phoneNumber }, { new: true }).then(
+          (client) => {
+            if (!client) {
+              return res.status(404).json({ msg: "resource not found" });
+            }
+            return res.json({ msg: "record updated successfully", client });
           }
-          return res.json({ msg: "record updated successfully", client });
-        });
+        );
       })
       .catch((err) => next(err));
   }

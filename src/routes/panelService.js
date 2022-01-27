@@ -1,8 +1,8 @@
 import { Router } from "express";
-import panelServiceController from "../controllers/PanelServiceController.js";
+import panelServiceController from "./../controllers/PanelServiceController.js";
 
-import { isAdmin } from "../middlewares/authorization.js";
-import validators from "../validators/projectDependencies.js";
+import { isAdmin } from "./../middlewares/authorization.js";
+import validators from "./../validators/projectDependencies.js";
 const routes = new Router();
 
 routes.post(

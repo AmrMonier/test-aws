@@ -1,7 +1,7 @@
 import BaseController from "./BaseController.js";
-import RewardProvider from "../models/RewardProvider.js";
-import { checkId } from "../helpers/methods.js";
-import Reward from "../models/Reward.js";
+import RewardProvider from "./../models/RewardProvider.js";
+import { checkId } from "./../helpers/methods.js";
+import Reward from "./../models/Reward.js";
 class RewardProviderController extends BaseController {
   async all(req, res, next) {
     RewardProvider.find({}).then((providers) => res.json({ providers }));

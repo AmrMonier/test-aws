@@ -1,6 +1,6 @@
 import { check } from "express-validator";
-import User from "../models/User.js";
-import { checkPhoneNumber } from "../helpers/twilio.js";
+import User from "./../models/User.js";
+import { checkPhoneNumber } from "./../helpers/twilio.js";
 const UserAuth = {
   register: [
     check("name", "name must be at least 3 characters long")
@@ -70,9 +70,7 @@ const UserAuth = {
       .custom(async (value) => {
         return User.findOne({ phoneNumber: value }).then(async (user) => {
           if (!user) {
-            return Promise.reject(
-              "this phone number doesn't exist"
-            );
+            return Promise.reject("this phone number doesn't exist");
           }
         });
       }),

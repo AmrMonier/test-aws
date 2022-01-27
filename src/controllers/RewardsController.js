@@ -1,9 +1,9 @@
 import BaseController from "./BaseController.js";
-import Reward from "../models/Reward.js";
+import Reward from "./../models/Reward.js";
 import fs from "fs";
 
-import RewardRequest from "../models/RewardRequest.js";
-import { checkId } from "../helpers/methods.js";
+import RewardRequest from "./../models/RewardRequest.js";
+import { checkId } from "./../helpers/methods.js";
 
 class RewardsController extends BaseController {
   async all(req, res, next) {

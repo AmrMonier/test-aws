@@ -1,5 +1,5 @@
-import Admin from "../Models/Admin.js";
-import dbInstance from "../middlewares/mongoose.js";
+import Admin from "./../Models/Admin.js";
+import dbInstance from "./../middlewares/mongoose.js";
 import chalk from "chalk";
 console.log(
   chalk.bgGray(

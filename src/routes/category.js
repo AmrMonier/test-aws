@@ -1,8 +1,8 @@
 import { Router } from "express";
-import categoryController from "../controllers/CategoryController.js";
+import categoryController from "./../controllers/CategoryController.js";
 
-import { isAdmin } from "../middlewares/authorization.js";
-import validators from "../validators/projectDependencies.js";
+import { isAdmin } from "./../middlewares/authorization.js";
+import validators from "./../validators/projectDependencies.js";
 const routes = new Router();
 
 routes.post("/", isAdmin, validators.category, categoryController.create);

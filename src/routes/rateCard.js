@@ -1,8 +1,8 @@
 import { Router } from "express";
-import rateCardController from "../controllers/RateCardController.js";
+import rateCardController from "./../controllers/RateCardController.js";
 
-import { isAdmin } from "../middlewares/authorization.js";
-import validators from "../validators/projectDependencies.js";
+import { isAdmin } from "./../middlewares/authorization.js";
+import validators from "./../validators/projectDependencies.js";
 const routes = new Router();
 
 routes.post("/", isAdmin, validators.rateCard, rateCardController.create);

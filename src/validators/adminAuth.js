@@ -1,5 +1,5 @@
 import { check } from "express-validator";
-import Admin from "../Models/Admin.js";
+import Admin from "./../Models/Admin.js";
 
 const authenticationValidators = {
   login: [

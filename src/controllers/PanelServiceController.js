@@ -1,6 +1,6 @@
 import BaseController from "./BaseController.js";
-import PanelService from "../models/PanelService.js";
-import { checkId } from "../helpers/methods.js";
+import PanelService from "./../models/PanelService.js";
+import { checkId } from "./../helpers/methods.js";
 
 class PanelServiceController extends BaseController {
   async create(req, res, next) {

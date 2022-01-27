@@ -1,8 +1,8 @@
 import { Router } from "express";
-import incidenceRateController from "../controllers/IncidenceRateController.js";
+import incidenceRateController from "./../controllers/IncidenceRateController.js";
 
-import { isAdmin } from "../middlewares/authorization.js";
-import validators from "../validators/projectDependencies.js";
+import { isAdmin } from "./../middlewares/authorization.js";
+import validators from "./../validators/projectDependencies.js";
 const routes = new Router();
 
 routes.post(

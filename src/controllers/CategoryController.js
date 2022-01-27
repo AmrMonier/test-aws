@@ -1,6 +1,6 @@
 import BaseController from "./BaseController.js";
-import Category from "../models/Category.js";
-import { checkId } from "../helpers/methods.js";
+import Category from "./../models/Category.js";
+import { checkId } from "./../helpers/methods.js";
 class CategoryController extends BaseController {
   async create(req, res, next) {
     super.reportErrors(req, res, next).then(() => {

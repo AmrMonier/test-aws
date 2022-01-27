@@ -1,8 +1,8 @@
 import { Router } from "express";
-import regionController from "../controllers/RegionController.js";
+import regionController from "./../controllers/RegionController.js";
 
-import { isAdmin } from "../middlewares/authorization.js";
-import validators from "../validators/projectDependencies.js";
+import { isAdmin } from "./../middlewares/authorization.js";
+import validators from "./../validators/projectDependencies.js";
 const routes = new Router();
 
 routes.post("/", isAdmin, validators.region, regionController.create);

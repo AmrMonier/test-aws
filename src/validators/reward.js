@@ -1,5 +1,5 @@
 import { check } from "express-validator";
-import RewardProvider from "../models/RewardProvider.js";
+import RewardProvider from "./../models/RewardProvider.js";
 const rewardValidator = {
   data: [
     check("name", "Name is required")

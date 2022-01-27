@@ -1,6 +1,6 @@
 import BaseController from "./BaseController.js";
-import RateCard from "../models/RateCard.js";
-import { checkId } from "../helpers/methods.js";
+import RateCard from "./../models/RateCard.js";
+import { checkId } from "./../helpers/methods.js";
 
 class RateCardController extends BaseController {
   async create(req, res, next) {

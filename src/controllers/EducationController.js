@@ -1,6 +1,6 @@
 import BaseController from "./BaseController.js";
-import Education from "../models/Education.js";
-import { checkId } from "../helpers/methods.js";
+import Education from "./../models/Education.js";
+import { checkId } from "./../helpers/methods.js";
 
 class EducationController extends BaseController {
   async create(req, res, next) {

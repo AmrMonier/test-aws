@@ -1,8 +1,8 @@
-import { verifyJWT } from "../helpers/cryptography.js";
-import Admin from "../models/Admin.js";
-import User from "../models/User.js";
-import { checkId } from "../helpers/methods.js";
-import Client from "../models/Client.js";
+import { verifyJWT } from "./../helpers/cryptography.js";
+import Admin from "./../models/Admin.js";
+import User from "./../models/User.js";
+import { checkId } from "./../helpers/methods.js";
+import Client from "./../models/Client.js";
 
 const isAuthenticated = (req) => {
   let token = req.headers.authorization;
@@ -92,7 +92,6 @@ const isUser = (req, res, next) => {
   }
 
   if (!checkId(data._id)) {
-
     return res
       .status(401)
       .json({ msg: "unauthorized access to the resources" });

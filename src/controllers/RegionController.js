@@ -1,6 +1,6 @@
 import BaseController from "./BaseController.js";
-import Region from "../models/Region.js";
-import { checkId } from "../helpers/methods.js";
+import Region from "./../models/Region.js";
+import { checkId } from "./../helpers/methods.js";
 
 class RegionController extends BaseController {
   async create(req, res, next) {

@@ -1,7 +1,7 @@
 import BaseController from "./BaseController.js";
-import IncidenceRate from "../models/IncidenceRate.js";
-import RateCard from "../models/RateCard.js";
-import { checkId } from "../helpers/methods.js";
+import IncidenceRate from "./../models/IncidenceRate.js";
+import RateCard from "./../models/RateCard.js";
+import { checkId } from "./../helpers/methods.js";
 
 class IncidenceRateController extends BaseController {
   async create(req, res, next) {

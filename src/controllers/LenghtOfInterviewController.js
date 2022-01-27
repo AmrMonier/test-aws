@@ -1,7 +1,7 @@
 import BaseController from "./BaseController.js";
-import LOI from "../models/LengthOfInterview.js";
-import RateCard from "../models/RateCard.js";
-import { checkId } from "../helpers/methods.js";
+import LOI from "./../models/LengthOfInterview.js";
+import RateCard from "./../models/RateCard.js";
+import { checkId } from "./../helpers/methods.js";
 
 class LenghtOfInterviewController extends BaseController {
   async create(req, res, next) {

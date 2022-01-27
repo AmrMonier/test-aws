@@ -1,10 +1,10 @@
 import BaseController from "./BaseController.js";
-import User from "../models/User.js";
-import { generateJWT, verify, hash } from "../helpers/cryptography.js";
-import { generateOTP } from "../helpers/otp.js";
-import RewardRequest from "../models/RewardRequest.js";
-import { checkId } from "../helpers/methods.js";
-import { sendOTP } from "../helpers/twilio.js";
+import User from "./../models/User.js";
+import { generateJWT, verify, hash } from "./../helpers/cryptography.js";
+import { generateOTP } from "./../helpers/otp.js";
+import RewardRequest from "./../models/RewardRequest.js";
+import { checkId } from "./../helpers/methods.js";
+import { sendOTP } from "./../helpers/twilio.js";
 
 class UserController extends BaseController {
   async register(req, res, next) {
@@ -80,7 +80,9 @@ class UserController extends BaseController {
       const { phoneNumber } = req.body;
       User.findOne({ phoneNumber }).then(async (user) => {
         if (!user) {
-          return res.status(401).json({ msg: "This phone number dosen't exist" });
+          return res
+            .status(401)
+            .json({ msg: "This phone number dosen't exist" });
         }
         user.otp.code = generateOTP(6);
         user.otp.expireation = Date.now() + 1 * 60 * 60 * 1000;
@@ -237,20 +239,22 @@ class UserController extends BaseController {
     if (!checkId(id)) {
       return res.status(404).json({ msg: "requested resources not found" });
     }
-    User.findById(id).then((user) => {
-      if (!user) {
-        return res.status(404).json({ msg: "resource not found" });
-      }
-      user.otp.code = generateOTP(6);
-      user.otp.expireation = Date.now() + 1 * 60 * 60 * 1000;
-      user.save();
-      sendOTP(user.otp.code, user.phoneNumber).then(() => {
-        return res.json({
-          msg: "new OTP code has been sent to you",
-          user: { id: user._id, name: user.name },
+    User.findById(id)
+      .then((user) => {
+        if (!user) {
+          return res.status(404).json({ msg: "resource not found" });
+        }
+        user.otp.code = generateOTP(6);
+        user.otp.expireation = Date.now() + 1 * 60 * 60 * 1000;
+        user.save();
+        sendOTP(user.otp.code, user.phoneNumber).then(() => {
+          return res.json({
+            msg: "new OTP code has been sent to you",
+            user: { id: user._id, name: user.name },
+          });
         });
-      });
-    }).catch(err => next(err));
+      })
+      .catch((err) => next(err));
   }
 }
 
