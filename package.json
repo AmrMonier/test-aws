@@ -2,13 +2,13 @@
   "name": "marketeers-backend",
   "version": "1.0.0",
   "description": "The Backend API for Marketeers Project",
-  "main": "Server2.js",
+  "main": "Server.js",
   "type": "module",
   "scripts": {
     "generate-super-admin": "node src/scripts/generateSuperAdmin.js",
-    "start": "node server2.js",
+    
     "dev": "nodemon server.js",
-    "build": "babel src -d lib"
+    
   },
   "repository": {
     "type": "git",
